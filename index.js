@@ -47,27 +47,31 @@ function reversePassword(pass) {
     for (let i = pass.length; i > 0; i--) {
         reversed = reversed + pass.charAt(i-1);
     }
+    console.log(reversed);
     return reversed;
 }
 
 function storePassword(name, pass1, pass2) {
     const account = {
         name: name,
-        password: pass1,
+        newpassword: pass1,
     }
     if (validatePassword(pass1, pass2)) {
         account.password = reversePassword(pass1);
     } else {
         account.password = pass1;
     }
+    console.log(account);
     return account;
 }
 
-// validatePassword("helloworld", "hello");
-// validatePassword("hello", "hello");
-// validatePassword("hello1234", "hello1234");
-// validatePassword("Hello1234", "Hello1234");
-// validatePassword("HELLO1234", "HELLO1234");
+validatePassword("helloworld", "hello");
+validatePassword("hello", "hello");
+validatePassword("hello1234", "hello1234");
+validatePassword("Hello1234", "Hello1234");
+validatePassword("HELLO1234", "HELLO1234");
+
+validatePassword("Hello1234", "hello1234");
 
 reversePassword("Ryan");
 
