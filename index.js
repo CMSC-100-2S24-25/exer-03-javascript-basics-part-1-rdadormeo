@@ -57,9 +57,9 @@ function storePassword(name, pass1, pass2) {
         newpassword: pass1,
     }
     if (validatePassword(pass1, pass2)) {
-        account.password = reversePassword(pass1);
+        account.newpassword = reversePassword(pass1);
     } else {
-        account.password = pass1;
+        account.newpassword = pass1;
     }
     console.log(account);
     return account;
