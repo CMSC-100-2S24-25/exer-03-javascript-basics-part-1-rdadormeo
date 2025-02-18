@@ -50,6 +50,19 @@ function reversePassword(pass) {
     return reversed;
 }
 
+function storePassword(name, pass1, pass2) {
+    const account = {
+        name: name,
+        password: pass1,
+    }
+    if (validatePassword(pass1, pass2)) {
+        account.password = reversePassword(pass1);
+    } else {
+        account.password = pass1;
+    }
+    return account;
+}
+
 // validatePassword("helloworld", "hello");
 // validatePassword("hello", "hello");
 // validatePassword("hello1234", "hello1234");
@@ -57,3 +70,6 @@ function reversePassword(pass) {
 // validatePassword("HELLO1234", "HELLO1234");
 
 reversePassword("Ryan");
+
+storePassword("John", "Pass1234", "Pass1234");
+storePassword("John", "Pass123", "Pass12345");
