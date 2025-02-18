@@ -42,8 +42,18 @@ function validatePassword(pass1, pass2) {
     }
 }
 
+function reversePassword(pass) {
+    var reversed = "";
+    for (let i = pass.length; i > 0; i--) {
+        reversed = reversed + pass.charAt(i-1);
+    }
+    return reversed;
+}
+
 // validatePassword("helloworld", "hello");
 // validatePassword("hello", "hello");
 // validatePassword("hello1234", "hello1234");
 // validatePassword("Hello1234", "Hello1234");
 // validatePassword("HELLO1234", "HELLO1234");
+
+reversePassword("Ryan");
