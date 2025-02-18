@@ -33,6 +33,7 @@ function validatePassword(pass1, pass2) {
     } else {
     len = false;
     }
+    //check if all conditions are met
     if ((len && mtch && upper && lower && num) == true) {
         console.log(true);
         return true;
@@ -43,7 +44,9 @@ function validatePassword(pass1, pass2) {
 }
 
 function reversePassword(pass) {
+    //variable to store reversed password
     var reversed = "";
+    //iterate through password in reverse and concatenate each element to reversed
     for (let i = pass.length; i > 0; i--) {
         reversed = reversed + pass.charAt(i-1);
     }
@@ -52,11 +55,14 @@ function reversePassword(pass) {
 }
 
 function storePassword(name, pass1, pass2) {
+    //create account object 
     const account = {
         name: name,
         newpassword: pass1,
     }
+    //use validatePassword function to check if user is valid
     if (validatePassword(pass1, pass2)) {
+        //call reversePassword to become new password
         account.newpassword = reversePassword(pass1);
     } else {
         account.newpassword = pass1;
